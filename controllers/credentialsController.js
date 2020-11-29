@@ -8,7 +8,8 @@ let checkCredentials = (req, res)=>{
     let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
         // res.json(result);
         if(result == 1){
-            res.sendFile('/app/public/expenses.html');
+            // res.sendFile('/app/public/expenses.html');
+            // res.sendFile('/app/public/expenses.html');
         }
 
     });

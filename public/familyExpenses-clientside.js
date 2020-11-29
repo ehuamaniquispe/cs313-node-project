@@ -9,7 +9,7 @@ let checkCredentials=()=>{
        console.log(password);
 
        $.post("/credentials",{userName,pass:password},(data)=>{
-           console.log(data);
+           console.log("datafrom client side"+data);
 
        })
 
