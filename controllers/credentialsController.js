@@ -7,7 +7,10 @@ let checkCredentials = (req, res)=>{
     // console.log(userName);
     // console.log(pass);
     let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
-        res.json(result);
+        // res.json(result);
+        if(result == 1){
+            res.send("Welcome!");
+        }
 
     });
 

@@ -15,12 +15,13 @@ let checkCredentials=(userName,pass,callback)=>{
         if(err){
             throw err;
         }else{
-            console.log("back from DB");
-            console.log(db_results);
-            result = {
-                     list:db_results.rows
-            };
-            callback(null, result);
+            if(db_results.rows.length == 1){
+
+                result = 1; 
+                
+                callback(null, result);
+            }
+           
         }
     });
 
