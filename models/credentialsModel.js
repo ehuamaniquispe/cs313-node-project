@@ -8,7 +8,7 @@ let checkCredentials=(userName,pass,callback)=>{
 
     let sql = "SELECT * FROM familymember WHERE familymember_username = $1 AND familymember_pass = $2";
 
-    let values = [usernName,pass];
+    let values = [userName,pass];
 
     pool.query(sql,values,(err,db_results)=>{
 
