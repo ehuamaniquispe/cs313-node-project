@@ -6,8 +6,11 @@ const pool = new Pool({connectionString:db_url});
 
 let checkCredentials=(userName,pass,callback)=>{
 
-    let sql = "SELECT * FROM familymember";
-    pool.query(sql,(err,db_results)=>{
+    let sql = "SELECT * FROM familymember WHERE familymember_username = $1 AND familymember_pass = $2";
+
+    let values = [usernName,pass];
+
+    pool.query(sql,values,(err,db_results)=>{
 
         if(err){
             throw err;
@@ -15,11 +18,7 @@ let checkCredentials=(userName,pass,callback)=>{
             console.log("back from DB");
             console.log(db_results);
             result = {
-                "user":[
-                    {userName, 
-                     pass,
-                     list:db_results.rows}
-                ]
+                     list:db_results.rows
             };
             callback(null, result);
         }
