@@ -1,5 +1,7 @@
 const express = require("express");
 const path = require("path");
+require('dotenv').config();
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const expensesController = require("./controllers/expensesController.js");
 const credentialsController = require("./controllers/credentialsController.js");
