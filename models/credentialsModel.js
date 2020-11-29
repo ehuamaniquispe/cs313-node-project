@@ -18,7 +18,7 @@ let checkCredentials=(userName,pass,callback)=>{
                 "user":[
                     {userName, 
                      pass,
-                     list:dB_results.rows}
+                     list:db_results.rows}
                 ]
             };
             callback(null, result);
