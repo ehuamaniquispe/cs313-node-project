@@ -16,6 +16,13 @@ let checkCredentials = (req, res)=>{
 
 }
 
+let showStartingPage=(req,res)=>{
+    res.render('login');
+
+}
+
+
 module.exports = {
- checkCredentials
+ checkCredentials,
+ showStartingPage
 };
