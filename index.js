@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended:true}));//support url encoded bodies
 
 
 //login
-app.get("/",credentialsController.showStartingPage);
+//app.get("/",credentialsController.showStartingPage);
 
 app.post("/credentials",credentialsController.checkCredentials);
 
