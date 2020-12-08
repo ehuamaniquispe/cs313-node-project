@@ -15,7 +15,7 @@ let checkCredentials = (req, res)=>{
         res.json(result);
        
 
-    // });
+    });
 
 }
 
