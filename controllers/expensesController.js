@@ -4,7 +4,9 @@ let expensesList = (req,res)=>{
     console.log("getting all expenses ...")
     
     let results = expenseModels.getAllExpenses((error,results)=>{
-            res.json(results);
+            // res.json(results);
+            res.render('expenses');
+
     });
 
 }
