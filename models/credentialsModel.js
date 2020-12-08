@@ -26,11 +26,16 @@ let checkCredentials=(userName,pass,callback)=>{
                 console.log(db_results.rows);
                 
                 // checking password
-                if(bcrypt.compare(pass, db_results.rows.familymember_pass)){
-                    console.log("password matched");
-                }
-
-                // let sql = "SELECT * FROM familymember WHERE familymember_username = $1 AND familymember_pass = $2";
+                bcrypt.compare(pass, db_results.rows.familymember_pass, (err,res)=>{
+                    if(res){
+                        
+                        console.log("password matched");
+                    }
+                    else{
+                        throw err;
+                    }
+                });
+            
             }
            
         }
