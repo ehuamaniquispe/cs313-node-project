@@ -1,12 +1,17 @@
+const{Pool} = require ("pg");
+const db_url = process.env.DATABASE_URL;
+
 let getAllExpenses = (callback)=>{
 
-    var results={
-        expenses:[
-            {id:1, amount: 2.5},
-            {id:2, amount: 4}
-        ]
-    }
-    callback(null,results);
+
+let sql = "SELECT * FROM expenses"; 
+pool.query(sql,(err,db_result)=>{
+    console.log(db_result.rows);
+});
+
+
+    callback(null,db_result);
+    // callback(null,results);
 }
 
 let getExpensesByUser = (userId) =>{

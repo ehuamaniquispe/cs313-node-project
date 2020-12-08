@@ -17,15 +17,24 @@ app.use(express.json());// support json encoded bodies
 app.use(express.urlencoded({extended:true}));//support url encoded bodies
 app.use(session({secret:'sdsadasd'})); //initializing the session
 
+//middleware to check access to pages
+const verifyLogin=(req,res,next)=>{
+    if(req.session.username){
+        next();
+    }
+    else{
+        res.status(401).send("It's not authorized");
+    }
+}
+
 
 //login
 //app.get("/",credentialsController.showStartingPage);
-
 app.post("/credentials",credentialsController.checkCredentials);
 
 //expenses
-app.get("/expenses",expensesController.expensesList);
-app.post("/expense", expensesController.insertExpense);
+app.get("/expenses",verifyLogin,expensesController.expensesList);
+app.post("/expense",verifyLogin, expensesController.insertExpense);
 
 
 

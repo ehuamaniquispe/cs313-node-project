@@ -11,7 +11,9 @@ let checkCredentials=()=>{
        $.post("/credentials",{userName,pass:password},(data)=>{
            console.log("datafrom client side"+data);
            if(data.success){
-               $("#result").append("Welcome");
+            //    $("#result").append("Welcome");
+            welcomePage();
+
             }
             else{
                 $("#result").append("Error logging in");
@@ -20,4 +22,13 @@ let checkCredentials=()=>{
 
        })
 
+}
+
+
+let welcomePage = ()=>{
+    $.req("/expenses",(data)=>{
+        if(data){
+            console.log("here at expenses");
+        }
+    });
 }
