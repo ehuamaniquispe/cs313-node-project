@@ -17,7 +17,8 @@ let checkCredentials=(userName,pass,callback)=>{
     pool.query(sql,values,(err,db_results)=>{
         
         if(err){
-            throw err;
+            //throw err;
+            callback(err.message, {success:false});                    
         }else{
             if(db_results.rows.length == 1){
                 
@@ -27,8 +28,11 @@ let checkCredentials=(userName,pass,callback)=>{
                     
                    if(res===true){// res === true
                         callback(null, {success:true});                    
+                    }
+                }).catch((err)=>{
+                    callback(err.message, {success:false});                    
+                    
 
-                   }
                 });
             
             }
