@@ -26,7 +26,7 @@ let checkCredentials=()=>{
 
 
 let welcomePage = ()=>{
-    $.req("/expenses",(data)=>{
+    $.get("/expenses",(data)=>{
         if(data){
             console.log("here at expenses");
         }
