@@ -28,7 +28,7 @@ let checkCredentials=(userName,pass,callback)=>{
 
 }
 
-let updatePassToHash=(pass)=>{
+let updatePassToHash=(pass,userName)=>{
 
     let sql = "UPDATE familymember SET familymember_pass = $1 WHERE familymember_username = $2";
 
