@@ -7,13 +7,12 @@ let checkCredentials = (req, res)=>{
     let userName = req.body.userName; // we use req.body because is a POST request
     let pass = req.body.pass;
 
-    var hash = bcrypt.hashSync(pass, 10);
-
-    credentialsModel.updatePassToHash(hash,userName);
+    // var hash = bcrypt.hashSync(pass, 10);
+    // credentialsModel.updatePassToHash(hash,userName);
 
     
-    // let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
-    //     res.json(result);
+    let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
+        res.json(result);
        
 
     // });
