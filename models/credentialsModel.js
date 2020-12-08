@@ -26,14 +26,12 @@ let checkCredentials=(userName,pass,callback)=>{
                 console.log(db_results.rows);
                 
                 // checking password
-                bcrypt.compare(pass, db_results.rows.familymember_pass, (err,res)=>{
-                    if(res){
-                        
-                        console.log("password matched");
-                    }
-                    else{
-                        throw err;
-                    }
+                bcrypt.compare(pass, db_results.rows.familymember_pass)
+                .then((res) => {
+                    
+                   if(res==true){// res === true
+                    console.log("password matched");
+                   }
                 });
             
             }
