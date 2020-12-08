@@ -1,5 +1,6 @@
 const{Pool} = require ("pg");
 const db_url = process.env.DATABASE_URL;
+var bcrypt = require('bcryptjs');
 
 console.log(`DB url is ${db_url}`);
 const pool = new Pool({connectionString:db_url});
