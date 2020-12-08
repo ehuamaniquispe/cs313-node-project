@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const session = require('express-session');
 require('dotenv').config();
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -14,6 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname ,"public")));
 app.use(express.json());// support json encoded bodies
 app.use(express.urlencoded({extended:true}));//support url encoded bodies
+app.use(session({secret:'sdsadasd'})); //initializing the session
 
 
 //login

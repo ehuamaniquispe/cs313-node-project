@@ -1,8 +1,8 @@
 const credentialsModel = require("../models/credentialsModel.js"); 
-var session = require('express-session');
+
 var bcrypt = require('bcryptjs');
 
-app.use(session({secret:'sdsadasd'})); //initializing the session
+
 
 let checkCredentials = (req, res)=>{
     console.log("checking credentials ...");
