@@ -21,12 +21,14 @@ let checkCredentials=(userName,pass,callback)=>{
             if(db_results.rows.length == 1){
                 
                 result = 1; 
-                
                 callback(null, result);
                 console.log(db_results.rows);
                 
                 // checking password
-                
+                if(bcrypt.compareSync(pass, db_results.rows.familymember_pass)){
+                    console.log("password matched");
+                }
+
                 // let sql = "SELECT * FROM familymember WHERE familymember_username = $1 AND familymember_pass = $2";
             }
            

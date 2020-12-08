@@ -13,8 +13,6 @@ let checkCredentials = (req, res)=>{
     
     let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
         res.json(result);
-       
-
     });
 
 }
