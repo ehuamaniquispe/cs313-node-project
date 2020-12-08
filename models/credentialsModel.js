@@ -27,7 +27,13 @@ let checkCredentials=(userName,pass,callback)=>{
                 .then((res) => {
                     
                    if(res===true){// res === true
-                        callback(null, {success:true});                    
+                    console.log("password Matched");
+                    callback(null, {success:true});                    
+                }
+                else{
+                    
+                    console.log("password didn't match");
+                        callback("incorrect password", {success:false});                    
                     }
                 }).catch((err)=>{
                     callback(err.message, {success:false});                    

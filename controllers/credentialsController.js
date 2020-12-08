@@ -12,11 +12,13 @@ let checkCredentials = (req, res)=>{
     credentialsModel.checkCredentials(userName,pass,(error,result)=>{
         
         if(result.success){
+            console.log("storing user name in a session...");
             req.session.username = userName;//storing the userName in the session
             res.json({success:true});
-
+            
         }
         else{
+            console.log("can not store user name in a session...");
             res.json({success:false})
         }
         
