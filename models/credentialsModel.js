@@ -25,6 +25,7 @@ let checkCredentials=(userName,pass,callback)=>{
                 callback(null, result);
                 console.log(db_results.rows);
                 console.log(`the password is : ${pass}`);
+                console.log(`the password is 2: ${db_results.rows.familymember_pass}`);
                 // checking password
                 bcrypt.compare(pass, db_results.rows.familymember_pass)
                 .then((res) => {
