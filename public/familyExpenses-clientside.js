@@ -1,7 +1,8 @@
 
-const { JSDOM } = require( "jsdom" );
-const { window } = new JSDOM( "" );
-const $ = require( "jquery" )( window );
+// const { JSDOM } = require( "jsdom" );
+// const { window } = new JSDOM( "" );
+// const $ = require( "jquery" )( window );
+const $ = require( "jquery" );
 
 let checkCredentials=()=>{
        console.log("checking credentials from the client...");
