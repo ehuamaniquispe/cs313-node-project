@@ -8,10 +8,10 @@ let getAllExpenses = (callback)=>{
 let sql = "SELECT * FROM expenses"; 
 pool.query(sql,(err,db_result)=>{
     console.log(db_result.rows);
+    callback(null,db_result);
 });
 
 
-    callback(null,db_result);
     // callback(null,results);
 }
 
