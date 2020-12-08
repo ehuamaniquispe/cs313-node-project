@@ -2,7 +2,9 @@
 // const { JSDOM } = require( "jsdom" );
 // const { window } = new JSDOM( "" );
 // const $ = require( "jquery" )( window );
-const $ = require( "jquery" );
+// const $ = require( "jquery" );
+var jsdom = require("jsdom").jsdom;
+global.$ = require('jquery/dist/jquery')(jsdom().createWindow());
 
 let checkCredentials=()=>{
        console.log("checking credentials from the client...");
