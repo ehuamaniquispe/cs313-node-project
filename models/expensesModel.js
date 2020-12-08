@@ -6,13 +6,12 @@ let getAllExpenses = (callback)=>{
 
 
 let sql = "SELECT * FROM expenses"; 
-let results = pool.query(sql,(err,db_result)=>{
+pool.query(sql,(err,db_result)=>{
     console.log(db_result.rows);
-    return db_result.rows;
+    callback(null,results.rows);
 });
 
 
-    callback(null,results);
 }
 
 let getExpensesByUser = (userId) =>{
