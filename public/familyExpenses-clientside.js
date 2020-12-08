@@ -10,8 +10,12 @@ let checkCredentials=()=>{
 
        $.post("/credentials",{userName,pass:password},(data)=>{
            console.log("datafrom client side"+data);
-           if(data ==1){
+           if(data.success){
                $("#result").append("Welcome");
+            }
+            else{
+                $("#result").append("Error logging in");
+
            }
 
        })
