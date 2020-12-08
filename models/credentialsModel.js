@@ -28,6 +28,19 @@ let checkCredentials=(userName,pass,callback)=>{
 
 }
 
+let updatePassToHash=(pass)=>{
+
+    let sql = "UPDATE familymember SET familymember_pass = $1 WHERE familymember_username = $2";
+
+    let values = [pass, userName];
+
+    pool.query(sql,values);
+
+
+
+
+}
+
 module.exports={
     checkCredentials
 };
