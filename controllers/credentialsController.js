@@ -9,7 +9,7 @@ let checkCredentials = (req, res)=>{
     let userName = req.body.userName; // we use req.body because is a POST request
     let pass = req.body.pass;
     
-    let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
+    credentialsModel.checkCredentials(userName,pass,(error,result)=>{
         
         if(res){
             req.session.username = userName;//storing the userName in the session
@@ -20,18 +20,17 @@ let checkCredentials = (req, res)=>{
             res.json({success:false})
         }
         
-        res.json(result);
+        
     });
 
 }
 
-let showStartingPage=(req,res)=>{
-    res.render('login');
+// let showStartingPage=(req,res)=>{
+//     res.render('login');
 
-}
+// }
 
 
 module.exports = {
- checkCredentials,
- showStartingPage
+ checkCredentials
 };

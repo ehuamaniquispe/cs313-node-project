@@ -21,14 +21,11 @@ let checkCredentials=(userName,pass,callback)=>{
         }else{
             if(db_results.rows.length == 1){
                 
-                result = 1; 
-                callback(null, result);
-            
                 // checking password
                 bcrypt.compare(pass, db_results.rows[0].familymember_pass)
                 .then((res) => {
                     
-                   if(res==true){// res === true
+                   if(res===true){// res === true
                         callback(null, {success:true});                    
 
                    }
