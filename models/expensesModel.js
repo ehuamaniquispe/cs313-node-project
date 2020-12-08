@@ -1,5 +1,6 @@
 const{Pool} = require ("pg");
 const db_url = process.env.DATABASE_URL;
+const pool = new Pool({connectionString:db_url});
 
 let getAllExpenses = (callback)=>{
 
