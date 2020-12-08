@@ -9,7 +9,8 @@ let checkCredentials = (req, res)=>{
 
     var hash = bcrypt.hashSync(pass, 10);
 
-    updatePassToHash(hash,userName);
+    credentialsModel.updatePassToHash(hash,userName);
+
     
     // let results = credentialsModel.checkCredentials(userName,pass,(error,result)=>{
     //     res.json(result);
