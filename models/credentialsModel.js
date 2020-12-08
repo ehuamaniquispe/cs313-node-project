@@ -42,5 +42,7 @@ let updatePassToHash=(pass,userName)=>{
 }
 
 module.exports={
-    checkCredentials
+    checkCredentials,
+    updatePassToHash
+
 };
