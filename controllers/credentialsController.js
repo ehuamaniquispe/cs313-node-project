@@ -7,7 +7,7 @@ var bcrypt = require('bcryptjs');
 let checkCredentials = (req, res)=>{
     console.log("checking credentials ...");
     let userName = req.body.userName; // we use req.body because is a POST request
-    let pass = req.body.pass;
+    let pass = req.body.password;
     
     console.log(userName);
     console.log(pass);
