@@ -9,6 +9,10 @@ let checkCredentials = (req, res)=>{
     let userName = req.body.userName; // we use req.body because is a POST request
     let pass = req.body.pass;
     
+    console.log(userName);
+    console.log(pass);
+
+    
     credentialsModel.checkCredentials(userName,pass,(error,result)=>{
         
         if(result.success){

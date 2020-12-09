@@ -7,7 +7,7 @@ const pool = new Pool({connectionString:db_url});
 
 let checkCredentials=(userName,pass,callback)=>{
 
-
+    console.log("checking credential in model");
     // checking username
     let sql = "SELECT * FROM familymember WHERE familymember_username = $1";
     
