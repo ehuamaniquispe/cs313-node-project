@@ -5,6 +5,7 @@ let expensesList = (req,res)=>{
     
     let results = expenseModels.getAllExpenses((error,results)=>{
             if(results){
+                console.log(results);
                 res.render('expenses',{results});
             }
     });
