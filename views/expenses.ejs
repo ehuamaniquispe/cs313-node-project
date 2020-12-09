@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Expenses</title>
 </head>
 <body>
-    Welcome!
+    Expenses
     <%=results%>
     <%=results[0].expenses_description%>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Person</th>
+        </tr>
+        <% for(var i=0; i<results.length; i++){ %>
+        <tr>
+            <td><%= results[i].idexpenses %></td>
+            <td><%= results[i].expenses_description %></td>
+            <td><%= results[i].expenses_amount %></td>
+            <td><%= results[i].expenses_date %></td>
+            <td><%= results[i].familymember_idfamilymember %></td>
+        </tr>
+         <% } %>
+    </table>
 </body>
 </html>
