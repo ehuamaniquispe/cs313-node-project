@@ -18,7 +18,8 @@ let checkCredentials = (req, res)=>{
         if(result.success){
             console.log("storing user name in a session...");
             req.session.username = userName;//storing the userName in the session
-            res.json({success:true});
+            // res.json({success:true});
+            res.redirect('/expenses');
             
         }
         else{
