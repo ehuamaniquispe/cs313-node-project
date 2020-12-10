@@ -14,17 +14,20 @@ let getAllExpenses = (callback)=>{
 
 let getExpensesByUser = (userId) =>{
 
-}
+};
 
-let insertNewExpense = (amount, callback) =>{
+let insertNewExpense = (description,amount,userId, callback) =>{
     //create the new topic in the DB
-    let results = {sucess:true};
-    callback(null,results);
-
-
-}
+    let date = new Date();
+    let sql = "INSERT INTO expenses(expenses_description,expenses_amount,expenses_date,familymember_idfamilymember) VALUES ($1,$2,$3,$4)"; 
+    let values = [description,amount,date,userId ];
+    pool.query(sql,values,(err,db_result)=>{
+       console.log(db_result.rowCount);
+       callback(null,db_result.rowCount);
+    })
+};
 
 module.exports = {
     getAllExpenses,
     insertNewExpense
-}
+};

@@ -28,7 +28,7 @@ let checkCredentials=(userName,pass,callback)=>{
                     
                    if(res===true){// res === true
                     console.log("password Matched");
-                    callback(null, {success:true});                    
+                    callback(null, db_results.rows);                    
                 }
                 else{
                     

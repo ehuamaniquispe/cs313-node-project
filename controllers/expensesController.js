@@ -16,20 +16,21 @@ let expensesList = (req,res)=>{
 //shows the form for new expenses
 let newExpense = (req,res)=>{
 
-    // res.json({success:true});
     console.log("going to the form...")
     res.render('newExpense');
 }
 
 let insertExpense = (req,res)=>{
-    res.json({success:true});
-    // let amount = req.body.amount;
-    // console.log(`creating a new expense with amount:${amount}`);
+    let description = req.body.description;
+    let amount = req.body.amount;
+    let userId = req.session.userid;
+    // res.json({success:true});
 
-    // let results = expenseModels.insertNewExpense(amount, (error,results)=>{
 
-    //         res.json(results);
-    // });
+    expenseModels.insertNewExpense(description,amount,userId, (error,results)=>{
+
+            res.json(results);
+    });
 
 }
 

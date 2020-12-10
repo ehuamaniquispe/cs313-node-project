@@ -20,23 +20,28 @@
 
         <a class="btn btn-primary" href="/new_expense">New Expense</a>
 
-        <table class="table">
-            <tr>
-                <th>ID</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Person</th>
-            </tr>
-            <% for(var i=0; i<results.length; i++){ %>
-            <tr>
-                <td><%= results[i].idexpenses %></td>
-                <td><%= results[i].expenses_description %></td>
-                <td><%= results[i].expenses_amount %></td>
-                <td><%= results[i].expenses_date %></td>
-                <td><%= results[i].familymember_name %></td>
-            </tr>
-                <% } %>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Person</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% for(var i=0; i<results.length; i++){ %>
+                <tr>
+                    <td><%= results[i].idexpenses %></td>
+                    <td><%= results[i].expenses_description %></td>
+                    <td><%= results[i].expenses_amount %></td>
+                    <td><%= results[i].expenses_date %></td>
+                    <td><%= results[i].familymember_name %></td>
+                </tr>
+                    <% } %>
+            </tbody>
         </table>
     </div>
 </body>
