@@ -16,16 +16,9 @@ let expensesList = (req,res)=>{
 //shows the form for new expenses
 let newExpense = (req,res)=>{
 
-    res.json({success:true});
-    // console.log("getting all expenses ...")
-    
-    // let results = expenseModels.getAllExpenses((error,results)=>{
-    //         if(results){
-    //             console.log(results[0].expenses_description);
-    //             res.render('expenses',{results});
-    //         }
-    // });
-
+    // res.json({success:true});
+    console.log("going to the form...")
+        res.render('newExpense');
 }
 
 let insertExpense = (req,res)=>{
