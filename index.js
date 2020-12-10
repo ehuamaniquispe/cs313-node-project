@@ -34,6 +34,7 @@ app.post("/credentials",credentialsController.checkCredentials);
 
 //expenses
 app.get("/expenses",verifyLogin,expensesController.expensesList);
+app.get("/new_expense",verifyLogin,expensesController.newExpense);
 app.post("/expense",verifyLogin, expensesController.insertExpense);
 
 
