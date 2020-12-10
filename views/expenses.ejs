@@ -15,27 +15,29 @@
     <title>Expenses</title>
 </head>
 <body>
-  <h1>Expenses</h1>  
+    <div class="container">
+        <h1>Expenses</h1>  
 
-    <a class="button" href="/new_expense">New Expense</a>
+        <a class="btn btn-primary" href="/new_expense">New Expense</a>
 
-    <table class="table">
-        <tr>
-            <th>ID</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Person</th>
-        </tr>
-        <% for(var i=0; i<results.length; i++){ %>
-        <tr>
-            <td><%= results[i].idexpenses %></td>
-            <td><%= results[i].expenses_description %></td>
-            <td><%= results[i].expenses_amount %></td>
-            <td><%= results[i].expenses_date %></td>
-            <td><%= results[i].familymember_name %></td>
-        </tr>
-         <% } %>
-    </table>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Person</th>
+            </tr>
+            <% for(var i=0; i<results.length; i++){ %>
+            <tr>
+                <td><%= results[i].idexpenses %></td>
+                <td><%= results[i].expenses_description %></td>
+                <td><%= results[i].expenses_amount %></td>
+                <td><%= results[i].expenses_date %></td>
+                <td><%= results[i].familymember_name %></td>
+            </tr>
+                <% } %>
+        </table>
+    </div>
 </body>
 </html>

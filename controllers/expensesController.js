@@ -18,17 +18,18 @@ let newExpense = (req,res)=>{
 
     // res.json({success:true});
     console.log("going to the form...")
-        res.render('newExpense');
+    res.render('newExpense');
 }
 
 let insertExpense = (req,res)=>{
-    let amount = req.body.amount;
-    console.log(`creating a new expense with amount:${amount}`);
+    res.json({success:true});
+    // let amount = req.body.amount;
+    // console.log(`creating a new expense with amount:${amount}`);
 
-    let results = expenseModels.insertNewExpense(amount, (error,results)=>{
+    // let results = expenseModels.insertNewExpense(amount, (error,results)=>{
 
-            res.json(results);
-    });
+    //         res.json(results);
+    // });
 
 }
 
