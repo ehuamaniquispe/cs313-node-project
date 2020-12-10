@@ -29,7 +29,7 @@ let insertExpense = (req,res)=>{
 
     expenseModels.insertNewExpense(description,amount,userId, (error,results)=>{
 
-            res.json(results);
+            res.redirect('/expenses');
     });
 
 }
