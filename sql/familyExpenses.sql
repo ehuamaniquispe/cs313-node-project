@@ -51,3 +51,17 @@ VALUES
      '2020-11-28',
      1
  );
+
+ INSERT INTO expenses(
+    expenses_description,
+    expenses_amount,
+    expenses_date,
+    familymember_idfamilymember
+ )
+ VALUES
+ (
+     'groceries for dinner',
+     40.5,
+     '2020-12-07',
+     1
+ );
