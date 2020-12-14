@@ -10,12 +10,10 @@ let expensesList = (req,res)=>{
                 res.render('expenses',{results});
             }
     });
-
 }
 
 //shows the form for new expenses
 let newExpense = (req,res)=>{
-
     console.log("going to the form...")
     res.render('newExpense');
 }
@@ -25,17 +23,18 @@ let insertExpense = (req,res)=>{
     let amount = req.body.amount;
     let userId = req.session.userid;
     // res.json({success:true});
-
-
     expenseModels.insertNewExpense(description,amount,userId, (error,results)=>{
-
             res.redirect('/expenses');
     });
+}
+
+let deleteExpense = (req,res)=>{
 
 }
 
 module.exports ={
     expensesList,
     insertExpense,
-    newExpense
+    newExpense,
+    deleteExpense
 };

@@ -39,9 +39,10 @@
                     <td><%= results[i].expenses_amount %></td>
                     <td><%= results[i].expenses_date %></td>
                     <td><%= results[i].familymember_name %></td>
+                    <td>Options</td>
                     <td>
-                        <a href="/updateExpense">Update</a>
-                        <a href="/deleteExpense">Delete</a>
+                        <a href="/update_expense">Update</a>
+                        <a href="/delete_expense/"+<%=result[i].idexpenses%>>Delete</a>
                     </td>
                 </tr>
                     <% } %>
