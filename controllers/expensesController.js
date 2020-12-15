@@ -15,10 +15,10 @@ let expensesList = (req,res)=>{
                 //         }
                 // });
 
-                allExpensesResult.then((result)=>{
+                allExpensesResult.then((results)=>{
 
                     console.log("allExpensesResult:"+result[0]);
-                    res.render('expenses',{result,userRole,userId});
+                    res.render('expenses',{results,userRole,userId});
                 }).catch((err)=>{
 
                     console.log("errorrrr:"+err);
