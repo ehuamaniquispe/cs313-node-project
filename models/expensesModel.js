@@ -39,6 +39,7 @@ let deleteExpense= async (expenseId)=>{
 
 //getting expenses information by expense id
 let getExpenseById = (expenseId,callback) =>{
+    console.log("expenseId"+expenseId);
     let sql = "SELECT * FROM expenses WHERE idexpenses = $1";
     let value = [expenseId]; 
     pool.query(sql,value,(err,db_result)=>{
