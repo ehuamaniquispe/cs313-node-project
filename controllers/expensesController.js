@@ -7,12 +7,13 @@ let expensesList = (req,res)=>{
     let userRole = req.session.userrole;
     let userId = req.session.userid;
     
-    expenseModels.getAllExpenses((error,results)=>{
+    let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
             if(results){
                 console.log(results[0].expenses_description);
                 res.render('expenses',{results,userRole,userId});
             }
     });
+    console.log("allExpensesResult:"+allExpensesResult);
 }
 
 //shows the form for new expenses
