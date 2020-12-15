@@ -43,17 +43,17 @@ let getExpenseById = (expenseId,callback) =>{
     let sql = "SELECT * FROM expenses WHERE idexpenses = $1";
     let value = [expenseId]; 
     pool.query(sql,value,(err,db_result)=>{
-        // if(err){
-        //     console.log("there is an error ...")
-        //     throw err;
-        // }else{
+        if(err){
+            console.log("there is an error ...")
+            throw err;
+        }else{
             console.log("got info from db query"+db_result.rows);
             callback(null,db_result.rows);
-        // }
+        }
 });
 }
 
-let updateExpense = (expenseId,description,amount) =>{
+let updateExpense = (expenseId,description,amount,callback) =>{
 
     let sql = "UPDATE expenses SET expenses_description = $1, expenses_amount = $2 WHERE idexpenses = $3"; 
     let values = [description,amount,expenseId];
@@ -65,7 +65,6 @@ let updateExpense = (expenseId,description,amount) =>{
             callback(null,db_result.rowCount);
         }
     });
-
 }
 
 module.exports = {
