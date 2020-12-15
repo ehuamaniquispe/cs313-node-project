@@ -7,7 +7,7 @@ let expensesList = (req,res)=>{
     let userRole = req.session.userrole;
     let userId = req.session.userid;
     
-    let allExpensesResult = expenseModels.getAllExpenses();
+    let results = expenseModels.getAllExpenses();
         // let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
             //         if(results){
                 //             console.log(results[0].expenses_description);
@@ -15,12 +15,14 @@ let expensesList = (req,res)=>{
                 //         }
                 // });
 
-                allExpensesResult
-                .then((results)=>{
+                res.render('expenses',{results,userRole,userId});
 
-                    console.log("allExpensesResult:"+results[0]);
-                    res.render('expenses',{results,userRole,userId});
-                });
+                // allExpensesResult
+                // .then((results)=>{
+
+                //     console.log("allExpensesResult:"+results[0]);
+                //     res.render('expenses',{results,userRole,userId});
+                // });
                 // .catch((err)=>{
 
                 //     console.log("errorrrr:"+err);
