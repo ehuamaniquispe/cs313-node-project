@@ -15,14 +15,16 @@ let expensesList = (req,res)=>{
                 //         }
                 // });
 
-                allExpensesResult.then((results)=>{
+                allExpensesResult
+                .then((results)=>{
 
                     console.log("allExpensesResult:"+results[0]);
                     res.render('expenses',{results,userRole,userId});
-                }).catch((err)=>{
-
-                    console.log("errorrrr:"+err);
                 });
+                // .catch((err)=>{
+
+                //     console.log("errorrrr:"+err);
+                // });
                 
 }
 
