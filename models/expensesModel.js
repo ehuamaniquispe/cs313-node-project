@@ -39,13 +39,14 @@ let deleteExpense= async (expenseId)=>{
 
 //getting expenses information by expense id
 let getExpenseById = (expenseId,callback) =>{
-    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember WHERE idexpenses = $1";
+    let sql = "SELECT * FROM expenses WHERE idexpenses = $1";
     let value = [expenseId]; 
     pool.query(sql,value,(err,db_result)=>{
         if(err){
+            console.log("there is an error ...")
             throw err;
         }else{
-            console.log(db_result.rows);
+            console.log("got info from db query"+db_result.rows);
             callback(null,db_result.rows);
         }
 });
