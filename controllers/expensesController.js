@@ -19,8 +19,8 @@ let expensesList = async (req,res)=>{
     
                 
                 let total_income = await incomesModels.sumIncomes();
-                console.log(total_income);
-                res.render('expenses',{results,userRole,userId,total_income[0]});
+                console.log(total_income[0]);
+                res.render('expenses',{results,userRole,userId,total_income:total_income[0]});
 
                 // allExpensesResult
                 // .then((results)=>{
