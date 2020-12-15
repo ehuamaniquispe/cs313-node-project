@@ -28,6 +28,7 @@ let sumIncomes=async ()=>{
 }
 
 module.exports = {
-    insertIncome
+    insertIncome,
+    sumIncomes
     
 };
