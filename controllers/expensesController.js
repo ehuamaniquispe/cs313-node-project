@@ -38,7 +38,7 @@ let deleteExpense = async (req,res)=>{
         res.redirect('/expenses');
     }
 }
-let updateExpense = (req,res)=>{
+let update_Expense = (req,res)=>{
     
     let expenseId = req.params.id; 
     expenseModels.getExpenseById(expenseId,(error,result)=>{
@@ -49,21 +49,24 @@ let updateExpense = (req,res)=>{
         }
     });
 }
-// let updateExpense = (req,res)=>{
-//     let expenseId = req.params.id; 
-//     expenseModels.updateExpense(expenseId,(error,result)=>{
+let updateExpense = (req,res)=>{
+    let expenseId = req.body.expenseId; 
+    let description = req.body.description; 
+    let amount = req.body.amount; 
+    expenseModels.updateExpense(expenseId,description,amount,(error,result)=>{
 
-//         if(result.rowCount == 1){
-//             res.redirect('/expenses');
-//         }
-//     });
+        if(result.rowCount == 1){
+            res.redirect('/expenses');
+        }
+    });
 
-// }
+}
 
 module.exports ={
     expensesList,
     insertExpense,
     newExpense,
     deleteExpense,
+    update_Expense,
     updateExpense
 };

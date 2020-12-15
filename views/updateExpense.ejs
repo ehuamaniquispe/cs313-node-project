@@ -20,18 +20,18 @@
 <body>
     <div class="container">
         <h1>Update Expense</h1>
-        <%= result.idexpenses %>
-        <form action="/add_expense" method="POST">
+        <form action="/update_expense" method="PUT">
             <div class="row">
               <div class="col">
                   <!-- <label for="description">Description</label> -->
-                <input type="text" class="form-control" placeholder="Description" id="description" name="description">
+                <input type="text" class="form-control" placeholder="Description" id="description" name="description" value="<%= result.expenses_description>">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
+                <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount" value="<%= result.expenses_amount>">
               </div>
             </div>
-            <input type="submit" value="Add">
+            <input type="hidden" name = "expenseId" value="<%= result.idexpenses>">
+            <input type="submit" value="Update">
         </form>
 
     </div>

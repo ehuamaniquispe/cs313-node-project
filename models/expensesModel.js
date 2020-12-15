@@ -52,10 +52,10 @@ let getExpenseById = (expenseId,callback) =>{
  
 }
 
-let updateExpense = (expenseId) =>{
+let updateExpense = (expenseId,description,amount) =>{
 
-    let sql = "INSERT INTO expenses(expenses_description,expenses_amount,expenses_date,familymember_idfamilymember) VALUES ($1,$2,$3,$4)"; 
-    let values = [description,amount,date,userId ];
+    let sql = "UPDATE expenses SET expenses_description, expenses_amount VALUES ($1,$2) WHERE idexpenses = $3"; 
+    let values = [description,amount,expenseId];
     pool.query(sql,values,(err,db_result)=>{
         if(err){
             throw err

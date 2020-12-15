@@ -37,7 +37,8 @@ app.get("/expenses",verifyLogin,expensesController.expensesList);
 app.get("/new_expense",verifyLogin,expensesController.newExpense);
 app.post("/add_expense",verifyLogin, expensesController.insertExpense);
 app.get("/delete_expense/:id",verifyLogin,expensesController.deleteExpense);//using async await
-app.get("/update_expense/:id",verifyLogin,expensesController.updateExpense);
+app.get("/update_expense/:id",verifyLogin,expensesController.update_Expense);
+app.put("/update_expense/:id",verifyLogin,expensesController.updateExpense);
 
 
 app.listen (PORT,function(){
