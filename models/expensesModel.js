@@ -54,7 +54,7 @@ let getExpenseById = (expenseId,callback) =>{
 
 let updateExpense = (expenseId,description,amount) =>{
 
-    let sql = "UPDATE expenses SET expenses_description, expenses_amount VALUES ($1,$2) WHERE idexpenses = $3"; 
+    let sql = "UPDATE expenses SET expenses_description = $1, expenses_amount = $2 WHERE idexpenses = $3"; 
     let values = [description,amount,expenseId];
     pool.query(sql,values,(err,db_result)=>{
         if(err){
