@@ -2,12 +2,12 @@ const expenseModels = require ("../models/expensesModel.js");
 
 
 //gests all expenses
-let expensesList = async (req,res)=>{
+let expensesList = (req,res)=>{
     console.log("getting all expenses ...")
     let userRole = req.session.userrole;
     let userId = req.session.userid;
     
-    let allExpensesResult =  await expenseModels.getAllExpenses();
+    let allExpensesResult = expenseModels.getAllExpenses();
         // let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
             //         if(results){
                 //             console.log(results[0].expenses_description);
