@@ -17,6 +17,16 @@ let insertIncome=(description,amount,date,userId,callback)=>{
 
 }
 
+//TODO: implement to be per month
+let sumIncomes=async ()=>{
+
+    let sql = "SELECT SUM (incomes_amount) AS total_income FROM incomes";
+    let total_income = await pool.query(sql);
+    console.log(total_income);
+    return total_income;    
+
+}
+
 module.exports = {
     insertIncome
     

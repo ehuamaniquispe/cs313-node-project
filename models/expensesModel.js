@@ -5,23 +5,15 @@ const pool = new Pool({connectionString:db_url});
 //getting all expenses
 let getAllExpenses = async ()=>{
    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember"; 
-  //try{
-
+  try{
       let db_result= await pool.query(sql);
       console.log("in model:"+db_result.rows);
       return db_result.rows;
-  //}catch(e){
-  //    throw e;
-  //}
+  }catch(e){
+     throw e;
+  }
 }
 
-// let getAllExpenses = (callback)=>{
-//    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember"; 
-//    pool.query(sql,(err,db_result)=>{
-//        console.log(db_result.rows);
-//        callback(null,db_result.rows);
-// });
-// }
 
 //inserting a new expense
 let insertNewExpense = (description,amount,userId, callback) =>{
@@ -78,6 +70,8 @@ let updateExpense = (expenseId,description,amount,callback) =>{
         }
     });
 }
+
+
 
 module.exports = {
     getAllExpenses,

@@ -1,4 +1,5 @@
 const expenseModels = require ("../models/expensesModel.js");
+const incomesModels = require ("../models/incomesModel.js");
 
 
 //gests all expenses
@@ -15,7 +16,11 @@ let expensesList = async (req,res)=>{
                 //         }
                 // });
                 // console.log("allExpensesResult:"+results[0]);
-                res.render('expenses',{results,userRole,userId});
+    
+                
+                let total_income = await incomesModels.sumIncomes();
+                console.log(total_income);
+                res.render('expenses',{results,userRole,userId,total_income});
 
                 // allExpensesResult
                 // .then((results)=>{
@@ -27,6 +32,8 @@ let expensesList = async (req,res)=>{
 
                 //     console.log("errorrrr:"+err);
                 // });
+
+
                 
 }
 
