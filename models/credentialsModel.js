@@ -31,22 +31,15 @@ let checkCredentials=(userName,pass,callback)=>{
                     callback(null, db_results.rows);                    
                 }
                 else{
-                    
                     console.log("password didn't match");
                         callback("incorrect password", {success:false});                    
                     }
                 }).catch((err)=>{
                     callback(err.message, {success:false});                    
-                    
-
                 });
-            
             }
-           
         }
     });
-
-
 }
 
 

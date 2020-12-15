@@ -22,15 +22,27 @@
         <form action ="/add_user" method="POST">
         <!-- <form> -->
             <div class="form-group">
-                    <label for="userName">username</label>
+                    <label for="name">Name</label>
+                    <input type="text" name= "name" id="name" >
+            </div>
+            <div class="form-group">
+                    <label for="userName">Username</label>
                     <input type="text" name= "userName" id="userName" >
             </div>
             <div class="form-group">
-                
-                <label for="password">password</label>
+                <label for="password">Password</label>
                 <input type="text" name= "password" id="password" >
             </div>
-            <input type="submit" class="btn btn-primary" value="log in">
+            <div class="form-group">
+                <label for="role">Role</label>
+                <!-- <input type="text" name= "password" id="password" > -->
+                <select name="role" id="role">
+                    <option value=""> select a role</option>
+                    <option value="0">Admin</option>
+                    <option value="1">User</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Add">
             <!-- <button class="btn btn-primary"> submit</button> -->
         <!-- </form> -->
         <div id="result"></div>

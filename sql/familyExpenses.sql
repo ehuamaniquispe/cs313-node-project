@@ -5,6 +5,7 @@ CREATE TABLE familymember(
    familymember_name VARCHAR(45) NOT NULL, 
    familymember_username VARCHAR(45) NOT NULL,
    familymember_pass VARCHAR(255) UNIQUE NOT NULL
+   -- familymember_role VARCHAR(1) UNIQUE NOT NULL
 );
 
 DROP TABLE IF EXISTS expenses CASCADE;
@@ -67,3 +68,8 @@ VALUES
      '2020-12-07',
      1
  );
+
+ --altering the familymember table to add a user column
+
+ ALTER TABLE familymember
+ ADD familymember_role VARCHAR(1) UNIQUE NOT NULL DEFAULT 0;
