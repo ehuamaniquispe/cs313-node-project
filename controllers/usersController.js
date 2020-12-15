@@ -6,6 +6,6 @@ let new_user=(req,res)=>{
 
 
 module.exports ={
-   
+   new_user
  
 };

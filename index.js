@@ -43,7 +43,7 @@ app.post("/update_expense",verifyLogin,expensesController.updateExpense);
 
 //users
 app.get("/new_user",verifyLogin,usersController.new_user);
-app.get("/new_user",verifyLogin,usersController.new_user);
+// app.get("/new_user",verifyLogin,usersController.new_user);
 
 app.listen (PORT,function(){
     console.log("Server listening on port"+PORT);
