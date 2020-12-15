@@ -3,13 +3,19 @@ const db_url = process.env.DATABASE_URL;
 const pool = new Pool({connectionString:db_url});
 
 //getting all expenses
-let getAllExpenses = (callback)=>{
+let getAllExpenses = async ()=>{
    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember"; 
-   pool.query(sql,(err,db_result)=>{
-       console.log(db_result.rows);
-       callback(null,db_result.rows);
-});
+   let db_result= await pool.query(sql);
+   return db_result;
 }
+
+// let getAllExpenses = (callback)=>{
+//    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember"; 
+//    pool.query(sql,(err,db_result)=>{
+//        console.log(db_result.rows);
+//        callback(null,db_result.rows);
+// });
+// }
 
 //inserting a new expense
 let insertNewExpense = (description,amount,userId, callback) =>{
