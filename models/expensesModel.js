@@ -32,7 +32,7 @@ let deleteExpense= (studentId)=>{
     let value = [studentId];
     let db_result = pool.query(sql,value)
     console.log("db_result:"+db_result);
-    return db_result;
+    return db_result.rowCount;
 }
 
 module.exports = {

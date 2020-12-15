@@ -28,6 +28,7 @@
                     <th>Amount</th>
                     <th>Date</th>
                     <th>Person</th>
+                    <td>Options</td>
                 </tr>
             </thead>
             
@@ -39,7 +40,6 @@
                     <td><%= results[i].expenses_amount %></td>
                     <td><%= results[i].expenses_date %></td>
                     <td><%= results[i].familymember_name %></td>
-                    <td>Options</td>
                     <td>
                         <a href="/update_expense">Update</a>
                         <a href="/delete_expense/<%= results[i].idexpenses %>">Delete</a>

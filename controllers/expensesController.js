@@ -33,9 +33,11 @@ let deleteExpense = async(req,res)=>{
     console.log("id:"+expenseId);
     let deleteResult = await expenseModels.deleteExpense(expenseId);
     console.log("expenses controller ..");
-    console.log(deleteResult[0]);
-    
+    console.log(deleteResult);
+    if(deleteResult == 1){
+
         res.redirect('/expenses');
+    }
     
 
 }
