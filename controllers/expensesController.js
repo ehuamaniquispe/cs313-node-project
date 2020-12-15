@@ -10,10 +10,17 @@ let expensesList = (req,res)=>{
     let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
             if(results){
                 console.log(results[0].expenses_description);
-                res.render('expenses',{results,userRole,userId});
+                return results
             }
-    });
-    console.log("allExpensesResult:"+allExpensesResult);
+        });
+        // let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
+            //         if(results){
+                //             console.log(results[0].expenses_description);
+                //             res.render('expenses',{results,userRole,userId});
+                //         }
+                // });
+                console.log("allExpensesResult:"+allExpensesResult);
+                res.render('expenses',{allExpensesresult,userRole,userId});
 }
 
 //shows the form for new expenses
