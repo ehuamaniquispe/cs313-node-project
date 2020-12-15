@@ -17,7 +17,7 @@ let expensesList = (req,res)=>{
 
                 allExpensesResult.then((results)=>{
 
-                    console.log("allExpensesResult:"+result[0]);
+                    console.log("allExpensesResult:"+results[0]);
                     res.render('expenses',{results,userRole,userId});
                 }).catch((err)=>{
 
