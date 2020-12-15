@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- css link -->
+    <link rel="stylesheet" href="stylesheets/main.css">
+     
+    <title>New Income</title>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>New Income</h1>
+        <form action="/add_income" method="POST">
+            <div class="row">
+              <div class="col">
+                  <!-- <label for="description">Description</label> -->
+                <input type="text" class="form-control" placeholder="Description" id="description" name="description">
+              </div>
+              <div class="col">
+                <input type="number" class="form-control" placeholder="Amount" id="amount" name="amount">
+              </div>
+            </div>
+            <input type="submit" value="Add">
+        </form>
+
+    </div>
+
+</body>
+</html>

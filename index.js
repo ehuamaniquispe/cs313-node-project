@@ -7,6 +7,7 @@ require('dotenv').config();
 const expensesController = require("./controllers/expensesController.js");
 const credentialsController = require("./controllers/credentialsController.js");
 const usersController = require("./controllers/usersController.js");
+const incomesController = require("./controllers/incomesController.js");
 
 const PORT = process.env.PORT || 5000
 var app = express();
@@ -44,6 +45,10 @@ app.post("/update_expense",verifyLogin,expensesController.updateExpense);
 //users
 app.get("/new_user",verifyLogin,usersController.new_user);
 app.post("/add_user",verifyLogin,usersController.add_user);
+
+//income
+app.get("/new_income",verifyLogin,incomesController.new_income);
+app.post("/add_income",verifyLogin,incomesController.add_income);
 
 app.listen (PORT,function(){
     console.log("Server listening on port"+PORT);
