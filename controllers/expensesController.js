@@ -53,6 +53,11 @@ let updateExpense = (req,res)=>{
     let expenseId = req.body.expenseId; 
     let description = req.body.description; 
     let amount = req.body.amount; 
+
+    console.log("expenseId"+expenseId)
+    console.log("description"+description)
+    console.log("amount"+amount)
+
     expenseModels.updateExpense(expenseId,description,amount,(error,result)=>{
 
         if(result.rowCount == 1){
