@@ -5,14 +5,14 @@ const pool = new Pool({connectionString:db_url});
 //getting all expenses
 let getAllExpenses = async ()=>{
    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember"; 
-  try{
+  //try{
 
       let db_result= await pool.query(sql);
       console.log("in model:"+db_result.rows);
       return db_result.rows;
-  }catch(e){
-      throw e;
-  }
+  //}catch(e){
+  //    throw e;
+  //}
 }
 
 // let getAllExpenses = (callback)=>{
