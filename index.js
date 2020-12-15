@@ -32,7 +32,7 @@ const verifyLogin=(req,res,next)=>{
 //credentials
 app.get("/",credentialsController.showStartingPage);
 app.post("/credentials",credentialsController.checkCredentials);
-app.get("/credentials",credentialsController.logout);
+app.get("/logout",credentialsController.logout);
 
 //expenses
 app.get("/expenses",verifyLogin,expensesController.expensesList);
