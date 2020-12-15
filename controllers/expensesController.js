@@ -35,16 +35,35 @@ let deleteExpense = async (req,res)=>{
     console.log("expenses controller ..");
     console.log(deleteResult);
     if(deleteResult.rowCount == 1){
-
         res.redirect('/expenses');
     }
-    
-
 }
+let updateExpense = (req,res)=>{
+    
+    let expenseId = req.params.id; 
+    expenseModels.getExpenseById(expenseId,(error,result)=>{
+        if(result[0]){
+            res.render(updateExpense, {result:result[0]});
+        }else{
+            res.send("there is an error ...");
+        }
+    });
+}
+// let updateExpense = (req,res)=>{
+//     let expenseId = req.params.id; 
+//     expenseModels.updateExpense(expenseId,(error,result)=>{
+
+//         if(result.rowCount == 1){
+//             res.redirect('/expenses');
+//         }
+//     });
+
+// }
 
 module.exports ={
     expensesList,
     insertExpense,
     newExpense,
-    deleteExpense
+    deleteExpense,
+    updateExpense
 };
