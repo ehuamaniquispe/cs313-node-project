@@ -43,13 +43,13 @@ let getExpenseById = (expenseId,callback) =>{
     let sql = "SELECT * FROM expenses WHERE idexpenses = $1";
     let value = [expenseId]; 
     pool.query(sql,value,(err,db_result)=>{
-        if(err){
-            console.log("there is an error ...")
-            throw err;
-        }else{
+        // if(err){
+        //     console.log("there is an error ...")
+        //     throw err;
+        // }else{
             console.log("got info from db query"+db_result.rows);
             callback(null,db_result.rows);
-        }
+        // }
 });
 }
 
