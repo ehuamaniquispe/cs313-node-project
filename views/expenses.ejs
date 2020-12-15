@@ -39,18 +39,19 @@
             <tbody>
                 <% for(var i=0; i<results.length; i++){ %>
                     <%if(results[i].idfamilymember == userId){%>
-                <tr>
-                    <td><%= results[i].idexpenses %></td>
-                    <td><%= results[i].expenses_description %></td>
-                    <td><%= results[i].expenses_amount %></td>
-                    <td><%= results[i].expenses_date %></td>
-                    <td><%= results[i].familymember_name %></td>
-                    <td>
-                        <a class="btn btn-warning" href="/update_expense/<%= results[i].idexpenses %>">Update</a>
-                        <a class="btn btn-danger" href="/delete_expense/<%= results[i].idexpenses %>">Delete</a>
-                    </td>
-                </tr>
+                        <tr>
+                            <td><%= results[i].idexpenses %></td>
+                            <td><%= results[i].expenses_description %></td>
+                            <td><%= results[i].expenses_amount %></td>
+                            <td><%= results[i].expenses_date %></td>
+                            <td><%= results[i].familymember_name %></td>
+                            <td>
+                                <a class="btn btn-warning" href="/update_expense/<%= results[i].idexpenses %>">Update</a>
+                                <a class="btn btn-danger" href="/delete_expense/<%= results[i].idexpenses %>">Delete</a>
+                            </td>
+                        </tr>
                     <% } %>
+                <% } %>
             </tbody>
         </table>
     </div>
