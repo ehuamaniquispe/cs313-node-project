@@ -87,5 +87,6 @@ module.exports = {
     insertNewExpense,
     deleteExpense,
     getExpenseById,
-    updateExpense
+    updateExpense,
+    sumExpenses
 };
