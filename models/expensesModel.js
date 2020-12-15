@@ -61,8 +61,8 @@ let updateExpense = (expenseId,description,amount,callback) =>{
         if(err){
             throw err
         }else{
-            console.log(db_result.rowCount);
-            callback(null,db_result.rowCount);
+            console.log(db_result);
+            callback(null,db_result);
         }
     });
 }
