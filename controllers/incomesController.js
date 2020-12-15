@@ -25,11 +25,12 @@ let add_income =(req,res) =>{
 }
 
 let incomes_detail =(req,res) =>{
-
+    let userRole = req.session.userrole;
+    let userId = req.session.userid;
     incomesModel.getAllIncomes((err,results)=>{
         if(results){
 
-            res.render('incomes',{results});
+            res.render('incomes',{userRole, userId, results});
         }else{
             console.log("there was an error getting all the incomes :(")
         }
