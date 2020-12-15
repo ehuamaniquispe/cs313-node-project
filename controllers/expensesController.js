@@ -5,11 +5,12 @@ const expenseModels = require ("../models/expensesModel.js");
 let expensesList = (req,res)=>{
     console.log("getting all expenses ...")
     let userRole = req.session.userrole;
+    let userId = req.session.userid;
     
     expenseModels.getAllExpenses((error,results)=>{
             if(results){
                 console.log(results[0].expenses_description);
-                res.render('expenses',{results,userRole});
+                res.render('expenses',{results,userRole,userId});
             }
     });
 }
