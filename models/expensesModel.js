@@ -32,7 +32,7 @@ let deleteExpense= async (studentId)=>{
     let value = [studentId];
     let db_result = await pool.query(sql,value)
     console.log("db_result:"+db_result);
-    return db_result.rowCount;
+    return db_result;
 }
 
 module.exports = {
