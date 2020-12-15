@@ -50,6 +50,8 @@ let update_Expense = (req,res)=>{
     });
 }
 let updateExpense = (req,res)=>{
+    console.log("in update expense...");
+
     let expenseId = req.body.expenseId; 
     let description = req.body.description; 
     let amount = req.body.amount; 

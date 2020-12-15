@@ -49,7 +49,6 @@ let getExpenseById = (expenseId,callback) =>{
             callback(null,db_result.rows);
         }
 });
- 
 }
 
 let updateExpense = (expenseId,description,amount) =>{
