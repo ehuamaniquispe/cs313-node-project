@@ -14,8 +14,12 @@ let expensesList = async (req,res)=>{
                 //             res.render('expenses',{results,userRole,userId});
                 //         }
                 // });
-                console.log("allExpensesResult:"+allExpensesResult[0]);
-                res.render('expenses',{allExpensesresult,userRole,userId});
+
+                allExpensesResult.then((result)=>{
+
+                    console.log("allExpensesResult:"+result[0]);
+                    res.render('expenses',{result,userRole,userId});
+                });
 }
 
 //shows the form for new expenses
