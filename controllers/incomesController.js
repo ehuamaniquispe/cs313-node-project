@@ -39,6 +39,7 @@ let add_income =(req,res) =>{
 }
 
 module.exports ={
-    new_income
+    new_income,
+    add_income
  
 };
