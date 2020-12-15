@@ -27,10 +27,10 @@ let insertNewExpense = (description,amount,userId, callback) =>{
     })
 };
 
-let deleteExpense= (studentId)=>{
+let deleteExpense= async (studentId)=>{
     let sql = "DELETE FROM expenses WHERE idexpenses = $1";
     let value = [studentId];
-    let db_result = pool.query(sql,value)
+    let db_result = await pool.query(sql,value)
     console.log("db_result:"+db_result);
     return db_result.rowCount;
 }
