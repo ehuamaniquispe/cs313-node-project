@@ -9,29 +9,12 @@ let expensesList = async (req,res)=>{
     let userId = req.session.userid;
     
     let results = await expenseModels.getAllExpenses();
-        // let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
-            //         if(results){
-                //             console.log(results[0].expenses_description);
-                //             res.render('expenses',{results,userRole,userId});
-                //         }
-                // });
-                // console.log("allExpensesResult:"+results[0]);
-    
-                
-                let total_income = await incomesModels.sumIncomes();
-                console.log(total_income[0]);
-                res.render('expenses',{results,userRole,userId,total_income:total_income[0]});
+    let total_income = await incomesModels.sumIncomes();
+    let total_expense = await expenseModels.sumExpenses();
+    let diference = total_income[0].total_income - total_expense[0].total_expense;
 
-                // allExpensesResult
-                // .then((results)=>{
+    res.render('expenses',{results,userRole,userId,total_income:total_income[0], total_expense:total_expense[0],diference});
 
-                //     console.log("allExpensesResult:"+results[0]);
-                //     res.render('expenses',{results,userRole,userId});
-                // });
-                // .catch((err)=>{
-
-                //     console.log("errorrrr:"+err);
-                // });
 
 
                 

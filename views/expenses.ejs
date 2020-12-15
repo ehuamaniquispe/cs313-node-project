@@ -27,15 +27,17 @@
         <a class="btn btn-primary" href="/new_income">Add Income</a> 
         
         <div>
-            <table>
+            <table class="table">
                 <thead>
-                    <tr>Total Monthly Incomes</tr>
-                    <tr>Total Monthly Expenses</tr>
+                    <tr>Total Incomes</tr>
+                    <tr>Total Expenses</tr>
                     <tr>Difference</tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><%= total_income.total_income %></td>
+                        <td><%= total_expense.total_expense %></td>
+                        <td><%= diference %></td>
                     </tr>
                 </tbody>
             </table>

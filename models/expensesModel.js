@@ -71,6 +71,15 @@ let updateExpense = (expenseId,description,amount,callback) =>{
     });
 }
 
+//TODO: implement to be per month
+let sumExpenses=async ()=>{
+
+    let sql = "SELECT SUM (expenses_amount) AS total_expense FROM expenses";
+    let total_expense = await pool.query(sql);
+    console.log(total_expense);
+    return total_expense.rows;    
+
+}
 
 
 module.exports = {
