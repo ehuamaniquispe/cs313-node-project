@@ -27,12 +27,12 @@ let insertNewExpense = (description,amount,userId, callback) =>{
     })
 };
 
-let deleteExpense=(studentId)=>{
+let deleteExpense= (studentId)=>{
     let sql = "DELETE FROM expenses WHERE idexpenses = $1";
     let value = [studentId];
-    pool.query(sql,value,(err,db_result)=>{
-        return db_result.rowCount;
-    })
+    let db_result = pool.query(sql,value)
+    console.log("db_result:"+db_result);
+    return db_result;
 }
 
 module.exports = {
