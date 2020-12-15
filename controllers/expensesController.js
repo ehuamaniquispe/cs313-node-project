@@ -28,7 +28,12 @@ let insertExpense = (req,res)=>{
     });
 }
 
-let deleteExpense = (req,res)=>{
+let deleteExpense = async (req,res)=>{
+    let expenseId = req.params.id; 
+    let deleteResult = await expenseModels.deleteExpense(expenseId);
+    if(deleteResult == 1){
+        res.redirect('/expenses');
+    }
 
 }
 

@@ -36,7 +36,7 @@ app.post("/credentials",credentialsController.checkCredentials);
 app.get("/expenses",verifyLogin,expensesController.expensesList);
 app.get("/new_expense",verifyLogin,expensesController.newExpense);
 app.post("/add_expense",verifyLogin, expensesController.insertExpense);
-app.post("/delete_expense",verifyLogin,expensesController.deleteExpense);
+app.delete("/delete_expense/:id",verifyLogin,expensesController.deleteExpense);
 
 
 app.listen (PORT,function(){
