@@ -14,7 +14,7 @@ let expensesList = async (req,res)=>{
                 //             res.render('expenses',{results,userRole,userId});
                 //         }
                 // });
-                console.log("allExpensesResult:"+allExpensesResult);
+                console.log("allExpensesResult:"+allExpensesResult[0]);
                 res.render('expenses',{allExpensesresult,userRole,userId});
 }
 
