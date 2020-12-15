@@ -38,8 +38,13 @@ let showStartingPage=(req,res)=>{
 
 }
 
+let logout =(req,res)=>{
+    req.session.destroy();
+    res.redirect('/');
+}
 
 module.exports = {
  checkCredentials,
- showStartingPage
+ showStartingPage,
+ logout
 };

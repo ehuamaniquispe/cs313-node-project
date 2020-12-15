@@ -29,10 +29,10 @@ const verifyLogin=(req,res,next)=>{
     }
 }
 
-
-//login
+//credentials
 app.get("/",credentialsController.showStartingPage);
 app.post("/credentials",credentialsController.checkCredentials);
+app.get("/credentials",credentialsController.logout);
 
 //expenses
 app.get("/expenses",verifyLogin,expensesController.expensesList);
@@ -50,6 +50,7 @@ app.post("/add_user",verifyLogin,usersController.add_user);
 app.get("/new_income",verifyLogin,incomesController.new_income);
 app.post("/add_income",verifyLogin,incomesController.add_income);
 app.get("/incomes_detail",verifyLogin,incomesController.incomes_detail);
+
 
 app.listen (PORT,function(){
     console.log("Server listening on port"+PORT);

@@ -18,15 +18,29 @@
     <div class="container">
         <h1>Expenses</h1>  
 
-        <a class="btn btn-primary" href="/new_expense">New Expense</a>
+        <div class="row">
         
-        <!-- TODO: it only can be seen by the admin -->
-        <% if (userRole == 0){%>
-        <a class="btn btn-primary" href="/new_user">Add User</a> 
-        <%}%>
-        <a class="btn btn-primary" href="/new_income">Add Income</a> 
-        <a class="btn btn-primary" href="/incomes_detail">Incomes Detail</a> 
+            <div class="col-2">
+                <a class="btn btn-primary" href="/new_expense">New Expense</a>
+
+            </div>
+            <div class="col-2">
+                <% if (userRole == 0){%>
+                    <a class="btn btn-primary" href="/new_user">Add User</a> 
+                    <%}%>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-primary" href="/new_income">Add Income</a> 
+            </div>
+            <div class="col-2">
+                <a class="btn btn-primary" href="/incomes_detail">Incomes Detail</a> 
+            </div>
+            <div class="col-4">
+                <a class="btn btn-info" href="/logout">Log out</a>
+            </div>
         
+        </div>
+
         <div>
             <table class="table w-25">
                 <thead>

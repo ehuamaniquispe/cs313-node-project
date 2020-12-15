@@ -72,4 +72,6 @@ VALUES
  --altering the familymember table to add a user column
 
  ALTER TABLE familymember
- ADD familymember_role VARCHAR(1) UNIQUE NOT NULL DEFAULT 0;
+ ADD familymember_role VARCHAR(1)  NOT NULL DEFAULT 0;
+
+ 
