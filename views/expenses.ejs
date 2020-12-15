@@ -38,7 +38,7 @@
             
             <tbody>
                 <% for(var i=0; i<results.length; i++){ %>
-                    <%if(results.idfamilymember == userId){%>
+                    <%if(results[i].idfamilymember == userId){%>
                 <tr>
                     <td><%= results[i].idexpenses %></td>
                     <td><%= results[i].expenses_description %></td>
