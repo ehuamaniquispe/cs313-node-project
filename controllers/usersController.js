@@ -1,4 +1,4 @@
-const expenseModels = require ("../models/usersModel.js");
+const usersModels = require ("../models/usersModel.js");
 
 let new_user=(req,res)=>{
     res.render('newUser');
@@ -11,7 +11,7 @@ let add_user = (req,res)=>{
     let password=req.body.password;
     let role=req.body.role;
 
-    userModel.insertUser(name,userName,password,role,(err, result)=>{
+    usersModel.insertUser(name,userName,password,role,(err, result)=>{
         if(result){
             //TODO: show a message of success
             console.log("user inserted successfully")
