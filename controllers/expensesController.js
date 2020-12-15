@@ -69,6 +69,8 @@ let updateExpense = (req,res)=>{
 
 }
 
+
+
 module.exports ={
     expensesList,
     insertExpense,
@@ -76,4 +78,5 @@ module.exports ={
     deleteExpense,
     update_Expense,
     updateExpense
+ 
 };

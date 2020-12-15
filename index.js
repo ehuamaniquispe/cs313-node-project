@@ -40,6 +40,9 @@ app.get("/delete_expense/:id",verifyLogin,expensesController.deleteExpense);//us
 app.get("/update_expense/:id",verifyLogin,expensesController.update_Expense);
 app.post("/update_expense",verifyLogin,expensesController.updateExpense);
 
+//users
+app.get("/new_user",verifyLogin,usersController.new_user);
+app.get("/new_user",verifyLogin,usersController.new_user);
 
 app.listen (PORT,function(){
     console.log("Server listening on port"+PORT);

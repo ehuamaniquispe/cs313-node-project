@@ -37,6 +37,8 @@ VALUES
 ('Eduardo',
  'eh',
  'ehq');
+ --this pass was hashed
+
 
  INSERT INTO expenses(
     expenses_description,

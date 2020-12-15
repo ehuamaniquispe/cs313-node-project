@@ -19,6 +19,9 @@
         <h1>Expenses</h1>  
 
         <a class="btn btn-primary" href="/new_expense">New Expense</a>
+        
+        <!-- TODO: it only can be seen by the admin -->
+        <a class="btn btn-primary" href="/new_user">Add User</a> 
 
         <table class="table table-hover">
             <thead class="thead-dark">
@@ -41,8 +44,8 @@
                     <td><%= results[i].expenses_date %></td>
                     <td><%= results[i].familymember_name %></td>
                     <td>
-                        <a href="/update_expense/<%= results[i].idexpenses %>">Update</a>
-                        <a href="/delete_expense/<%= results[i].idexpenses %>">Delete</a>
+                        <a class="btn btn-warning" href="/update_expense/<%= results[i].idexpenses %>">Update</a>
+                        <a class="btn btn-danger" href="/delete_expense/<%= results[i].idexpenses %>">Delete</a>
                     </td>
                 </tr>
                     <% } %>
