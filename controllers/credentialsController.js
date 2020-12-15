@@ -19,6 +19,7 @@ let checkCredentials = (req, res)=>{
             console.log("storing user name in a session...");
             req.session.username = userName;//storing the userName in the session
             req.session.userid = result[0].idfamilymember;
+            req.session.userrole = result[0].familymember_role;
             res.redirect('/expenses');
             
         }

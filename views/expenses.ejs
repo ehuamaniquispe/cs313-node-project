@@ -21,8 +21,9 @@
         <a class="btn btn-primary" href="/new_expense">New Expense</a>
         
         <!-- TODO: it only can be seen by the admin -->
+        <% if (user.Role == 0){%>
         <a class="btn btn-primary" href="/new_user">Add User</a> 
-
+        <%}%>
         <table class="table table-hover">
             <thead class="thead-dark">
                 <tr>
