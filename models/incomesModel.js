@@ -10,8 +10,8 @@ let insertIncome=(description,amount,date,userId,callback)=>{
         if(err){
             throw err;
         }else{
-            console.log(db_result.rowsCount);
-            callback(null,db_result.rowsCount);
+            console.log(db_result.rowCount);
+            callback(null,db_result.rowCount);
         }
  });    
 
