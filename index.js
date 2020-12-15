@@ -49,7 +49,7 @@ app.post("/add_user",verifyLogin,usersController.add_user);
 //income
 app.get("/new_income",verifyLogin,incomesController.new_income);
 app.post("/add_income",verifyLogin,incomesController.add_income);
-app.post("/incomes_detail",verifyLogin,incomesController.incomes_detail);
+app.get("/incomes_detail",verifyLogin,incomesController.incomes_detail);
 
 app.listen (PORT,function(){
     console.log("Server listening on port"+PORT);
