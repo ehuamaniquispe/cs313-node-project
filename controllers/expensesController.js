@@ -43,7 +43,7 @@ let updateExpense = (req,res)=>{
     let expenseId = req.params.id; 
     expenseModels.getExpenseById(expenseId,(error,result)=>{
         if(result[0]){
-            res.render(updateExpenses, {result:result[0]});
+            res.render('updateExpense', {result:result[0]});
         }else{
             res.send("there is an error ...");
         }
