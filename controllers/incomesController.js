@@ -24,8 +24,22 @@ let add_income =(req,res) =>{
     });
 }
 
+let incomes_detail =(req,res) =>{
+
+    incomesModel.getAllIncomes((err,results)=>{
+        if(results){
+
+            res.render('incomes',{results});
+        }else{
+            console.log("there was an error getting all the incomes :(")
+        }
+    });
+
+}
+
 module.exports ={
     new_income,
-    add_income
+    add_income,
+    incomes_detail
  
 };

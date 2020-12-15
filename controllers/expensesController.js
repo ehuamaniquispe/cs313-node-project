@@ -14,9 +14,6 @@ let expensesList = async (req,res)=>{
     let diference = total_income[0].total_income - total_expense[0].total_expense;
 
     res.render('expenses',{results,userRole,userId,total_income:total_income[0], total_expense:total_expense[0],diference});
-
-
-
                 
 }
 

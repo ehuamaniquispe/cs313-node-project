@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+        <!-- jquery cdn -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- css link -->
+        <link rel="stylesheet" href="stylesheets/main.css">
+    <title>Incomes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Incomes</h1>  
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% if (userRole == 0){%>
+                    <% for(var i=0; i<results.length; i++){ %>
+                            <tr>
+                                <td><%= results[i].idincomes %></td>
+                                <td><%= results[i].incomes_description %></td>
+                                <td><%= results[i].incomes_amount %></td>
+                                <td><%= results[i].incomes_date %></td>
+                                <td><%= results[i].familymember_name %></td>
+                            </tr>
+                    <% } %>
+                    <%} else {%>
+                        <% for(var i=0; i<results.length; i++){ %>
+
+                            <%if(results[i].idfamilymember == userId){%>
+                                <tr>
+                                    <td><%= results[i].idincomes %></td>
+                                    <td><%= results[i].incomes_description %></td>
+                                    <td><%= results[i].incomes_amount %></td>
+                                    <td><%= results[i].incomes_date %></td>
+                                    <td><%= results[i].familymember_name %></td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                     <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
