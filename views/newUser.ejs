@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <!-- css link -->
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <title>New User</title>
 </head>
@@ -19,8 +19,8 @@
     <div class="container">
         
         <h1>New user</h1>
+        <section>
         <form action ="/add_user" method="POST">
-        <!-- <form> -->
             <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name= "name" id="name" >
@@ -44,8 +44,9 @@
             </div>
             <input type="submit" class="btn btn-primary" value="Add">
             <!-- <button class="btn btn-primary"> submit</button> -->
-        <!-- </form> -->
-        <div id="result"></div>
+            <div id="result"></div>
+            </form>
+        </section>
     </div>
     
 

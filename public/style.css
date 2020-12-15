@@ -1,3 +1,14 @@
+section {
+    padding: 20px;    
+    border-style:solid;
+    border-radius: 15px;
+    border-color: lightgray;
+    margin-bottom: 5px;
+    border-width: 1px;
+
+    max-width: auto;
+  
+}
 
 .container{
     margin-left: auto;
