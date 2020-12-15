@@ -6,6 +6,7 @@ const pool = new Pool({connectionString:db_url});
 let getAllExpenses = async ()=>{
    let sql = "SELECT * FROM expenses INNER JOIN familymember ON expenses.familymember_idfamilymember = familymember.idfamilymember"; 
    let db_result= await pool.query(sql);
+   console.log(db_result.rows);
    return db_result.rows;
 }
 
