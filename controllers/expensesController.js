@@ -19,9 +19,11 @@ let expensesList = async (req,res)=>{
 
                     console.log("allExpensesResult:"+result[0]);
                     res.render('expenses',{result,userRole,userId});
-                }).catch(err){
+                }).catch((err)=>{
+
                     console.log("errorrrr:"+err);
-                };
+                });
+                
 }
 
 //shows the form for new expenses
