@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const expensesController = require("./controllers/expensesController.js");
 const credentialsController = require("./controllers/credentialsController.js");
+const usersController = require("./controllers/usersController.js");
 
 const PORT = process.env.PORT || 5000
 var app = express();
