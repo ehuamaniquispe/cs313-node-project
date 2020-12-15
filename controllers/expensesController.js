@@ -2,19 +2,19 @@ const expenseModels = require ("../models/expensesModel.js");
 
 
 //gests all expenses
-let expensesList = (req,res)=>{
+let expensesList = async (req,res)=>{
     console.log("getting all expenses ...")
     let userRole = req.session.userrole;
     let userId = req.session.userid;
     
-    let results = expenseModels.getAllExpenses();
+    let results = await expenseModels.getAllExpenses();
         // let allExpensesResult = expenseModels.getAllExpenses((error,results)=>{
             //         if(results){
                 //             console.log(results[0].expenses_description);
                 //             res.render('expenses',{results,userRole,userId});
                 //         }
                 // });
-
+                // console.log("allExpensesResult:"+results[0]);
                 res.render('expenses',{results,userRole,userId});
 
                 // allExpensesResult
