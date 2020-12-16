@@ -24,7 +24,7 @@ h1{
     font-size: x-large;
 }
 
-h3{
+h2{
     color: #4f87ff;
     font-size: medium;
     
@@ -41,6 +41,7 @@ table{
 }
 
 .login{
-    max-width: 50%;
+    max-width: 600px;
     align-content: center;
+    text-align: center;
 }
