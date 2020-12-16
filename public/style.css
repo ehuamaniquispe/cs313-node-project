@@ -39,3 +39,8 @@ table{
 .row {
     padding: 5px;
 }
+
+.login{
+    max-width: 50%;
+    align-content: center;
+}
