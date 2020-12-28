@@ -29,7 +29,7 @@ let sumIncomes=async ()=>{
 
 let getAllIncomes = (callback) =>{
 
-    let sql = "SELECT * FROM incomes INNER JOIN familymember ON incomes.familymember_idfamilymember = familymember.idfamilymember"; 
+    let sql = "SELECT * FROM incomes INNER JOIN familymember ON incomes.familymember_idfamilymember = familymember.idfamilymember ORDER BY idincomes DESC"; 
        pool.query(sql,(err,db_result)=>{
 
            console.log("in model:"+db_result.rows);
