@@ -1,16 +1,13 @@
 const{Pool} = require ("pg");
-const db_url = process.env.DATABASE_URL;
+const pool = new Pool();// uses the .env database variables
 var bcrypt = require('bcryptjs');
 
-console.log(`DB url is ${db_url}`);
-const pool = new Pool({connectionString:db_url});
 
 let checkCredentials=(userName,pass,callback)=>{
 
     console.log("checking credential in model");
     // checking username
-    let sql = "SELECT * FROM familymember WHERE familymember_username = $1";
-    
+    let sql = "SELECT * FROM familymember WHERE familymember_username = $1";    
     let values = [userName];
     // let values = [userName,pass];
     
@@ -44,10 +41,11 @@ let checkCredentials=(userName,pass,callback)=>{
 
 
 // update plain password to hashed password from database
-let updatePassToHash=(pass,userName)=>{
-
+let updatePassToHash=(userName,pass)=>{
+  
+    var hash = bcrypt.hashSync(pass, 10);
     let sql = "UPDATE familymember SET familymember_pass = $1 WHERE familymember_username = $2";
-    let values = [pass, userName];
+    let values = [hash, userName];
     pool.query(sql,values);
 
 }

@@ -1,6 +1,5 @@
 const{Pool} = require ("pg");
-const db_url = process.env.DATABASE_URL;
-const pool = new Pool({connectionString:db_url});
+const pool = new Pool();// uses the .env database variables
 
 //inserting incomes
 let insertIncome=(description,amount,date,userId,callback)=>{

@@ -1,3 +1,4 @@
+const dateFormat = require("dateformat");
 const expenseModels = require ("../models/expensesModel.js");
 const incomesModels = require ("../models/incomesModel.js");
 
@@ -11,7 +12,13 @@ let expensesList = async (req,res)=>{
     let results = await expenseModels.getAllExpenses();
     let total_income = await incomesModels.sumIncomes();
     let total_expense = await expenseModels.sumExpenses();
-    let diference = total_income[0].total_income - total_expense[0].total_expense;
+    let diference = (total_income[0].total_income - total_expense[0].total_expense)*10/10;
+
+   
+    //updating json object format- expenses_date key
+    results.forEach(x => {
+        x.expenses_date = dateFormat(x.expenses_date, "dd/mm/yy");
+      });
 
     res.render('expenses',{results,userRole,userId,total_income:total_income[0], total_expense:total_expense[0],diference});
                 

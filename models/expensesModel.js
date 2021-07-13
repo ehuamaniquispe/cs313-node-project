@@ -1,6 +1,5 @@
 const{Pool} = require ("pg");
-const db_url = process.env.DATABASE_URL;
-const pool = new Pool({connectionString:db_url});
+const pool = new Pool();// uses the .env database variables
 
 //getting all expenses
 let getAllExpenses = async ()=>{

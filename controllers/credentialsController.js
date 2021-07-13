@@ -3,7 +3,6 @@ const credentialsModel = require("../models/credentialsModel.js");
 var bcrypt = require('bcryptjs');
 
 
-
 let checkCredentials = (req, res)=>{
     console.log("checking credentials ...");
     let userName = req.body.userName; // we use req.body because is a POST request
@@ -12,6 +11,7 @@ let checkCredentials = (req, res)=>{
     console.log(userName);
     console.log(pass);
 
+    //credentialsModel.updatePassToHash(userName,pass);// use it to hash the first user's pass
     
     credentialsModel.checkCredentials(userName,pass,(error,result)=>{
         
